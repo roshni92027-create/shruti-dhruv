@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Shruti &amp; Dhruv</title>
+  <meta name="description" content="Shruti weds Dhruv — Sunday, 15th November 2026, Raja Agrawal Marriage Hall, Damoh. With blessings of Munnlal Sahu, Santosh Sahu &amp; Ramnaresh Sahu">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400&family=Cormorant+Garamond:wght@500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <!-- first screen loads before everything else -->
+  <link rel="preload" as="image" href="assets/intro-poster.webp" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- ===== Screen 1: closed window intro ===== -->
+    <section class="intro" id="intro" role="button" tabindex="0" aria-label="Tap to open the invitation">
+      <video class="intro-video" id="introVideo" src="assets/intro.mp4" poster="assets/intro-poster.webp"
+             muted playsinline webkit-playsinline preload="auto"></video>
+      <p class="tap-hint">Tap to open</p>
+    </section>
+
+    <!-- ===== Screen 2: the card ===== -->
+    <section class="card" id="card" aria-hidden="true">
+      <img class="card-bg" src="assets/card-bg.webp" alt="">
+
+      <!-- couple, parents and venue: set as text over the artwork -->
+      <p class="monogram" aria-hidden="true">S<span>D</span></p>
+      <h1 class="couple">
+        <span>Shruti</span>
+        <small>weds</small>
+        <span>Dhruv</span>
+      </h1>
+      <div class="parents">
+        <p class="parents-label">With the blessings of</p>
+        <p>Munnlal Sahu &middot; Santosh Sahu</p>
+        <p>Ramnaresh Sahu</p>
+      </div>
+      <p class="venue">Raja Agrawal Marriage Hall<br>Damoh</p>
+
+      <!-- sea over the top landscape -->
+      <div class="water"><img src="assets/water.webp" alt=""></div>
+
+      <!-- foliage + garlands -->
+      <img class="piece leaf-left sway-base"  src="assets/leaf-left.webp"  alt="">
+      <img class="piece palm-right sway-base" src="assets/palm-right.webp" alt="">
+      <img class="piece garland garland-top"  src="assets/garland-a.webp"  alt="">
+      <img class="piece garland garland-tree1" src="assets/garland-b.webp" alt="">
+      <img class="piece garland garland-tree2" src="assets/garland-a.webp" alt="">
+
+      <!-- save the date: the date sits under the flowers, guests scratch them off -->
+      <p class="date" id="date">
+        <small>Sunday</small>
+        <span>15<sup>th</sup></span><span>NOV</span><span>2026</span>
+      </p>
+      <div class="flowers reveal" id="flowers" aria-label="Scratch the flowers to reveal the date">
+        <span></span><span></span><span></span>
+      </div>
+      <p class="scratch-hint" id="scratchHint">Scratch the flowers to reveal the date</p>
+
+      <!-- countdown -->
+      <div class="countdown reveal" id="countdown" aria-live="polite">
+        <span data-unit="d">00</span><i>:</i><span data-unit="h">00</span><i>:</i><span data-unit="m">00</span><i>:</i><span data-unit="s">00</span>
+      </div>
+    </section>
+
+    <!-- background music: unlocked by the "tap to open", plays on the card -->
+    <audio id="music" src="https://cdn.shopify.com/s/files/1/0778/9474/6301/files/Chaand_Baaliyan_On_Piano.mp3?v=1791735345" loop preload="none"></audio>
+    <button class="music-btn" id="musicBtn" type="button" aria-label="Pause music" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    </button>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
